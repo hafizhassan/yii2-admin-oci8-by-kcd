@@ -79,7 +79,7 @@ class Assignment extends Model
             $query->from('QUEST.QST_IMON_USER');
             // $query->where( ['UIA.V_QST_SUPERVISOR_APPOINTMENT.SUPERVISION_CODE' => 'S']);
             // $query->where(['in', 'UIA.V_QST_SUPERVISOR_APPOINTMENT.SUPERVISION_CODE', ['S','SS']  ]);
-            $query->join('INNER JOIN', 'ADMIN.STAFFINFO_VW',"QUEST.QST_IMON_USER.USERNAME=ADMIN.STAFFINFO_VW.USERNAME AND ADMIN.STAFFINFO_VW.DEPT_CODE='$kcdio'",false);
+            $query->join('INNER JOIN', 'ADMIN.STAFFINFO_VW',"QUEST.QST_IMON_USER.USERNAME=ADMIN.STAFFINFO_VW.USERNAME AND ADMIN.STAFFINFO_VW.DEPT_CODE='$dept_code'",false);
 
             $query->orderBy([
               'QUEST.QST_IMON_USER.USERNAME' => SORT_ASC,
