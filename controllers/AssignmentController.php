@@ -72,7 +72,7 @@ class AssignmentController extends Controller
         }
 
         if($role_cps_admin){
-            $dataProvider = $searchModel->searchbykcd(\Yii::$app->request->getQueryParams(), $this->userClassName, $this->usernameField);
+            $dataProvider = $searchModel->search(\Yii::$app->request->getQueryParams(), $this->userClassName, $this->usernameField);
         }else{
             $dataProvider = $searchModel->searchbykcd(\Yii::$app->request->getQueryParams(), $this->userClassName, $this->usernameField);
         }
