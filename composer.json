@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "apaoww\\AdminOci8\\": ""
+            "hafizhassan\\AdminOci8\\": ""
         }
     },
     "extra": {
