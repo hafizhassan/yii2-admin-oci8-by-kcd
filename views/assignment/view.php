@@ -1,9 +1,22 @@
 <?php
 
 use yii\helpers\Html;
+use common\components\ImoHelper;
+$role_cps_admin=ImoHelper::getRole("CPS Administrator");
+$role_kcd_admin=ImoHelper::getRole("Kulliyyah Administrator");
 
 /* @var $this yii\web\View */
 /* @var $model yii\web\IdentityInterface */
+
+
+if($role_cps_admin){
+    $avaliable=$avaliable;
+}else{
+    $remove=array('Kulliyyah Administrator','CPS Administrator');
+    $new_array=array_diff($avaliable['Roles'],$remove);
+    $avaliable['Roles']=$new_array;
+    $avaliable['Permissions']=array( );
+}
 
 $this->title = Yii::t('rbac-admin', 'Assignments');
 $this->params['breadcrumbs'][] = $this->title;
