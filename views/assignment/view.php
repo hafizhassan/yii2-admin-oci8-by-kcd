@@ -12,7 +12,7 @@ $role_kcd_admin=ImoHelper::getRole("Kulliyyah Administrator");
 if($role_cps_admin){
     $avaliable=$avaliable;
 }else{
-    $remove=array('Kulliyyah Administrator','CPS Administrator');
+    $remove=array('CPS Administrator');
     $new_array=array_diff($avaliable['Roles'],$remove);
     $avaliable['Roles']=$new_array;
     $avaliable['Permissions']=array( );
