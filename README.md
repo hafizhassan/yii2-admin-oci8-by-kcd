@@ -18,19 +18,19 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require apaoww/yii2-admin-oci8 "dev-master"
+php composer.phar require hafizhassan/yii2-admin-oci8 "dev-master"
 ```
 
 for dev-master
 
 ```
-php composer.phar require apaoww/yii2-admin-oci8 "dev-master"
+php composer.phar require hafizhassan/yii2-admin-oci8 "dev-master"
 ```
 
 or add
 
 ```
-"apaoww/yii2-admin-oci8": "dev-master"
+"hafizhassan/yii2-admin-oci8": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -43,7 +43,7 @@ to the require section of your `composer.json` file.
 return [
     ...
     'aliases' => [
-        '@apaoww/AdminOci8' => 'path/to/your/extracted',
+        '@hafizhassan/AdminOci8' => 'path/to/your/extracted',
         ...
     ]
 ];
