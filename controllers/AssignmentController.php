@@ -171,7 +171,10 @@ class AssignmentController extends Controller
      * @return string
      */
     public function actionRoleSearch($id, $target, $term = '')
-    {
+    {   
+        $role_cps_admin=ImoHelper::getRole("CPS Administrator");
+        $role_kcd_admin=ImoHelper::getRole("Kulliyyah Administrator");
+
         $authManager = Yii::$app->authManager;
         $avaliable = [];
         $assigned = [];
@@ -188,6 +191,14 @@ class AssignmentController extends Controller
             if ($role->name[0] !== '/' && !isset($assigned['Permissions'][$role->name])) {
                 $avaliable['Permissions'][$role->name] = $role->name;
             }
+        }
+        if($role_cps_admin){
+            $avaliable=$avaliable;
+        }else{
+            $remove=array('Kulliyyah Administrator','CPS Administrator');
+            $new_array=array_diff($avaliable['Roles'],$remove);
+            $avaliable['Roles']=$new_array;
+            $avaliable['Permissions']=array( );
         }
 
         $result = [];
