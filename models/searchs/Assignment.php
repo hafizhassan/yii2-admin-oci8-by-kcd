@@ -93,8 +93,8 @@ class Assignment extends Model
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
-
-        $query->andFilterWhere(['like', $usernameField, strtolower($this->username)]);
+        $query->andFilterWhere(['like', 'QUEST.QST_IMON_USER.'.$usernameField, strtolower($this->USERNAME)]);
+        //$query->andFilterWhere(['like', $usernameField, strtolower($this->username)]);
 
         return $dataProvider;
     }
